@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+<head>
+    <title>House For Rent</title>
+    <link rel="stylesheet" href="{% static 'css/houserent.css' %}">
+</head>
+<body>
+    <h1>House for Rent</h1>
+    <nav>
+        <a href="/houses">Houses</a>
+        <a href="/">Cities</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'houserent/base.html' %}
+
+{% block content %}
+<h2>{{ house.name }} <a href="{% url 'house_edit' pk=house.pk %}">(edit)</a></h2>
+<a href ="{% url 'house_delete' pk=house.pk %}"> DELETE </a>
+<h2>address:{{house.address}}</h2>
+<h2>house rent:{{house.amt}}</h2>
+<img src="{{ house.image_url }}" alt="" class="artist-photo" height="200" width="200" />
+<h2>description:{{house.description}}</h2>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'houserent/base.html' %}
+{% block content %}
+<h2>{{ citi.name }} <a href="{% url 'city_edit' pk=citi.pk %}">(edit)</a></h2>
+<a href ="{% url 'city_delete' pk=citi.pk %}"> DELETE </a>
+<h3>Houses <a href="">(+)</a></h3>
+<ul>
+  {% for house in citi.houses.all %}
+  <li>
+    <a href="">name :{{ house.name }}</a>
+    <h2>address:{{house.address}}</h2>
+    <h2>house rent:{{house.amt}}</h2>
+    <img src="{{ house.image_url }}" alt="" class="artist-photo" height="200" width="200" />
+    <h2>description:{{house.description}}</h2>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
