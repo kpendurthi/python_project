@@ -1,5 +1,4 @@
 {% extends 'houserent/base.html' %}
-
 {% block content %}
 <h2>{{ house.name }} <a href="{% url 'house_edit' pk=house.pk %}">(edit)</a></h2>
 <a href ="{% url 'house_delete' pk=house.pk %}"> DELETE </a>

@@ -4,15 +4,15 @@ from .models import City, Houses
 from .forms import CityForm, HouseForm
 
 
-
+@login_required
 def city_list(request):
     cities = City.objects.all()
     return render(request, 'houserent/city_list.html', {'cities': cities})
-
+@login_required
 def city_detail(request, pk):
     citi = City.objects.get(id=pk)
     return render(request, 'houserent/city_detail.html', {'citi': citi})
-
+@login_required
 def city_create(request):
     if request.method == 'POST':
         form = CityForm(request.POST)
@@ -22,7 +22,7 @@ def city_create(request):
     else:
         form = CityForm()
     return render(request, 'houserent/city_form.html', {'form': form})
-
+@login_required
 def city_edit(request, pk):
     city = City.objects.get(pk=pk)
     if request.method == "POST":
@@ -33,29 +33,29 @@ def city_edit(request, pk):
     else:
         form = CityForm(instance=city)
     return render(request, 'houserent/city_form.html', {'form': form})
-
+@login_required
 def city_delete(request, pk):
     City.objects.get(id=pk).delete()
     return redirect('city_list') 
-
+@login_required
 def house_list(request):
     housess = Houses.objects.all()
     return render(request, 'houserent/house_list.html', {'housess': housess})
-
+@login_required
 def house_detail(request, pk):
     house = Houses.objects.get(id=pk)
     return render(request, 'houserent/house_detail.html', {'house': house})
-
+@login_required
 def house_create(request):
     if request.method == 'POST':
         form = HouseForm(request.POST)
         if form.is_valid():
-            fad = form.save()
-            return redirect('house_detail', pk=house.pk)
+            houses = form.save()
+            return redirect('house_detail', pk=houses.pk)
     else:
         form = HouseForm()
     return render(request, 'houserent/house_form.html', {'form': form})
-
+@login_required
 def house_edit(request, pk):
     house = Houses.objects.get(pk=pk)
     if request.method == "POST":
@@ -66,7 +66,7 @@ def house_edit(request, pk):
     else:
         form = HouseForm(instance=house)
     return render(request, 'houserent/house_form.html', {'form': form})
-
+@login_required
 def house_delete(request, pk):
     Houses.objects.get(id=pk).delete()
     return redirect('house_list') 
