@@ -25,7 +25,7 @@ SECRET_KEY = '0v0m-!d&d6x0!u*6s(puh+-r$det9cw!dn(ol&=)&j1r1y=20t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['myhouserentdjangoapp.herokuapp.com', 'localhost']
 
 LOGIN_REDIRECT_URL = '/'
 # Application definition
