@@ -49,4 +49,4 @@ description	text area
 Issues and Resolutions
 Use this section to list of all major issues encountered and their resolution.
 
-#4 - Issue with deploying my application via Heroku
+Issue with deploying my application via Heroku
